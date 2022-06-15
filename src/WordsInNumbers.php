@@ -9,7 +9,27 @@ class WordsInNumbers {
     private const upperCaseFactor = 38;
     private const lowerCaseFactor = 96;
 
-    public function convertWordToNumber(string $wordToConvert): int
+    public static function start(string $word): void
+    {
+        $number = self::convertWordToNumber($word);
+        echo "A palavra equivale ao número: " . $number . "\n";
+        echo (self::isCousinPrime($number) ? "É número primo" : "Não é número primo") . "\n";
+        echo (HappyNumbers::isHappyNumber($number) ? "É número feliz" : "Não é número feliz") . "\n";
+        echo Multiples::isValueDivisibleByXOrY($number, 3, 5) ? "É múltiplo de 3 ou 5" : "Não é múltiplo de 3 ou 5";
+    }
+
+    public static function isCousinPrime(int $number): bool
+    {
+        $divisionCounter = 0;
+        for($i = 1; $i <= $number; $i++) {
+            if(Multiples::isValueDivisible($number, $i)) {
+                $divisionCounter++;
+            }
+        }
+        return $divisionCounter == 2;
+    }
+
+    public static function convertWordToNumber(string $wordToConvert): int
     {
         $splittedWord = str_split($wordToConvert);
 

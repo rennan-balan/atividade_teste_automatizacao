@@ -4,6 +4,30 @@ use PHPUnit\Framework\TestCase;
 
 class WordsInNumbersTest extends TestCase {
     /** 
+     * @covers WordsInNumbers::isCousinPrime
+    */
+    public function testIsCousinPrime(): void
+    {
+        $number = 5;
+
+        $isCousinPrime = WordsInNumbers::isCousinPrime($number);
+
+        $this->assertTrue($isCousinPrime, 'Errou');
+    }
+    
+     /** 
+     * @covers WordsInNumbers::convertCharToAscii
+    */
+    public function testConvertCharToAscii(): void
+    {
+        $char = 'R';
+
+        $convertCharToAscii = WordsInNumbers::convertCharToAscii($char);
+
+        $this->assertEquals(82, $convertCharToAscii, 'Errou');
+    }
+    
+    /** 
      * @covers WordsInNumbers::convertWordToNumber
     */
     public function testConvertWordToNumber(): void
