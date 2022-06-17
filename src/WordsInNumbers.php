@@ -2,6 +2,7 @@
 namespace TestesAutomatizados;
 
 class WordsInNumbers {
+    
     private const startLowerCase = 97;
     private const endLowerCase = 122;
     private const startUpperCase = 65;
@@ -9,13 +10,13 @@ class WordsInNumbers {
     private const upperCaseFactor = 38;
     private const lowerCaseFactor = 96;
 
-    public static function start(string $word): void
+    public static function start(string $word, int $x, int $y): void
     {
         $number = self::convertWordToNumber($word);
-        echo "A palavra equivale ao número: " . $number . "\n";
+        echo "A palavra $word equivale ao número: " . $number . "\n";
         echo (self::isCousinPrime($number) ? "É número primo" : "Não é número primo") . "\n";
         echo (HappyNumbers::isHappyNumber($number) ? "É número feliz" : "Não é número feliz") . "\n";
-        echo Multiples::isValueDivisibleByXOrY($number, 3, 5) ? "É múltiplo de 3 ou 5" : "Não é múltiplo de 3 ou 5";
+        echo Multiples::isValueDivisibleByXOrY($number, $x, $y) ? "É múltiplo de 3 ou 5" : "Não é múltiplo de 3 ou 5";
     }
 
     public static function isCousinPrime(int $number): bool

@@ -4,7 +4,9 @@
     },
     "autoload": {
         "psr-4": {
-          "TestesAutomatizados\\": "src/"
+          "TestesAutomatizados\\": "src/",
+          "TestesAutomatizados\\FreightCalculation\\Entities\\": "src/freight-calculation/entities/",
+          "TestesAutomatizados\\FreightCalculation\\Services\\": "src/freight-calculation/services/"
         }
     }
 }

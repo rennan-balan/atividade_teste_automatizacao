@@ -2,7 +2,9 @@
 namespace TestesAutomatizados;
 
 class Multiples {
+
     private const maxValue = 1000;
+    
     public static function sumMultipleXOrY(int $x, int $y): int
     {
         $sum = 0;
