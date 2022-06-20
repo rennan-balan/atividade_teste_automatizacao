@@ -16,6 +16,7 @@ class ProductTest extends TestCase {
         $product->setName($name);
         $product->setPrice($price);
 
+        $this->assertInstanceOf(Product::class, $product);
         $this->assertEquals($name, $product->getName());
         $this->assertEquals($price, $product->getPrice());
     }

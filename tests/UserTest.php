@@ -16,6 +16,7 @@ class UserTest extends TestCase {
         $user->setName($name);
         $user->setCep($cep);
 
+        $this->assertInstanceOf(User::class, $user);
         $this->assertEquals($name, $user->getName());
         $this->assertEquals($cep, $user->getCep());
     }

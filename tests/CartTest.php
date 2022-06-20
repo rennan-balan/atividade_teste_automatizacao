@@ -18,6 +18,7 @@ class CartTest extends TestCase {
         $cart = new Cart();
         $cart->setUser($user);
 
+        $this->assertInstanceOf(Cart::class, $cart);
         $this->assertEquals($user->getName(), $cart->getUser()->getName());
         $this->assertEquals($user->getCep(), $cart->getUser()->getCep());
         $this->assertEmpty($cart->getOrderList());

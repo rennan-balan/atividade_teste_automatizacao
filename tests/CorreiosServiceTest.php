@@ -11,10 +11,10 @@ class CorreiosServiceTest extends TestCase {
     {
         $cep = '12345048';
 
-        $correio = new CorreiosService();
+        $correiosService = $this->createMock(CorreiosService::class);
 
-        $value = $correio->calculate($cep);
+        $correiosService->method('calculate')->willReturn(10.99);
 
-        $this->assertEquals(10.99, $value);
+        $this->assertEquals(10.99, $correiosService->calculate($cep));
     }
 }

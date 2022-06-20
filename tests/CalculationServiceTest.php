@@ -25,7 +25,9 @@ class CalculationServiceTest extends TestCase {
         $cart->setUser($user);
         $cart->addProduct($product, 2);
 
-        $correiosService = new CorreiosService();
+        $correiosService = $this->createMock(CorreiosService::class);
+
+        $correiosService->method('calculate')->willReturn(0.0);
 
         $calculationService = new CalculationService($correiosService);
 
@@ -51,7 +53,9 @@ class CalculationServiceTest extends TestCase {
         $cart->setUser($user);
         $cart->addProduct($product, 2);
 
-        $correiosService = new CorreiosService();
+        $correiosService = $this->createMock(CorreiosService::class);
+
+        $correiosService->method('calculate')->willReturn(10.99);
 
         $calculationService = new CalculationService($correiosService);
 
@@ -77,7 +81,9 @@ class CalculationServiceTest extends TestCase {
         $cart->setUser($user);
         $cart->addProduct($product, 2);
 
-        $correiosService = new CorreiosService();
+        $correiosService = $this->createMock(CorreiosService::class);
+
+        $correiosService->method('calculate')->willReturn(1.99);
 
         $calculationService = new CalculationService($correiosService);
 
